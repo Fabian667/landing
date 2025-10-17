@@ -1,0 +1,802 @@
+/* Variables para la paleta de colores */
+:root {
+    --azul-profundo: #0a3d62;
+    --dorado-miel: #f39c12;
+    --verde-hoja: #27ae60;
+    --blanco: #ffffff;
+    --gris-claro: #e6e9ef; /* un poco mÃ¡s oscuro que blanco */
+    --gris-oscuro: #333333;
+    --sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(180deg, var(--azul-profundo) 0%, #06263a 100%);
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--dorado-miel);
+    color: var(--blanco);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--azul-profundo);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--sombra);
+}
+
+.btn-ecommerce {
+    background-color: var(--verde-hoja);
+    font-size: 1.2rem;
+}
+
+.btn-ecommerce:hover {
+    background-color: var(--dorado-miel);
+}
+
+.ecommerce-button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--azul-profundo);
+    position: relative;
+    font-size: 2.5rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--dorado-miel);
+    margin: 15px auto;
+}
+
+/* Header y navegaciÃ³n */
+header {
+    background-color: var(--azul-profundo);
+    color: var(--blanco);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--sombra);
+}
+
+.logo h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--dorado-miel);
+}
+
+/* TamaÃ±o del logo en el menÃº */
+.logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.honeycomb-menu {
+    display: flex;
+    gap: 14px;
+}
+
+.hex-item {
+    position: relative;
+    width: 80px;
+    height: 50px;
+    background: linear-gradient(135deg, #f5b84f, var(--dorado-miel) 60%, #d88a0e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+.hex-item a {
+    color: var(--blanco);
+    font-weight: 600;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hex-item:hover {
+    background: linear-gradient(135deg, #34d17a, var(--verde-hoja) 60%, #1e9e54);
+    transform: scale(1.1);
+    box-shadow: 0 10px 26px rgba(39, 174, 96, 0.35);
+}
+
+.tienda-item {
+    background: linear-gradient(135deg, #34d17a, var(--verde-hoja) 60%, #1e9e54);
+}
+
+.tienda-item:hover {
+    background-color: var(--dorado-miel);
+}
+
+/* Secciones */
+section {
+    padding: 100px 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--azul-profundo);
+    color: var(--blanco);
+    text-align: center;
+    padding-top: 150px;
+}
+
+/* HÃ©roe simple con imagen de fondo */
+.hero-section.simple-hero {
+    background-image: none;
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Panal grande con carrusel en el hÃ©roe */
+.hero-carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.main-carousel {
+    width: 800px;
+    height: 400px;
+    background-color: var(--blanco);
+}
+
+/* Fila con tres panales con carrusel */
+.hero-carousel-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.mini-carousel {
+    width: 300px;
+    height: 240px;
+}
+
+/* Contenedor y tÃ­tulo de cada panal */
+.panel-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.panel-title {
+    color: var(--blanco);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Span con hover claro para títulos específicos */
+.hover-highlight {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-highlight:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.15);
+}
+
+/* BotÃ³n hexagonal fuera del hÃ©roe */
+.hero-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-hex {
+    width: 130px;
+    height: 70px;
+    background-color: var(--dorado-miel);
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+.btn-hex:hover {
+    background-color: var(--verde-hoja);
+    transform: scale(1.08);
+    box-shadow: 0 10px 26px rgba(39, 174, 96, 0.35);
+}
+
+/* Grilla de panales del hÃ©roe con filas desplazadas */
+.hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.honeycomb-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.honeycomb-row.offset {
+    margin-left: 125px; /* desplaza la fila para formar el patrÃ³n de colmena */
+}
+
+.hero-logo {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.honeycomb-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.hex-cell {
+    position: relative;
+    width: 250px;
+    height: 220px;
+    margin: 15px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-color: var(--blanco);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(10, 61, 98, 0.15);
+}
+
+.hex-content {
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.hex-cell:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(10, 61, 98, 0.25);
+}
+
+.main-cell {
+    width: 480px;
+    height: 320px;
+    background-color: var(--dorado-miel);
+    color: var(--blanco);
+}
+
+/* Carrusel dentro de hexÃ¡gono */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+.large-cell {
+    width: 520px;
+    height: 420px;
+}
+
+.hex-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background-color: var(--dorado-miel);
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Servicios */
+.services-section {
+    background-color: var(--gris-claro);
+}
+
+.service-icon-1, .service-icon-2, .service-icon-3, 
+.service-icon-4, .service-icon-5, .service-icon-6 {
+    background-color: var(--dorado-miel);
+}
+
+/* Tabs Servicios/Actividades */
+.services-tabs {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 30px;
+    padding: 10px 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(243, 156, 18, 0.25);
+    box-shadow: 0 8px 20px rgba(10, 61, 98, 0.18);
+    /* position: relative; ya no es necesario para spans de fondo */
+}
+
+.services-tabs .tab {
+    border: 1px solid rgba(243, 156, 18, 0.45);
+    color: var(--blanco);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    position: relative;
+    z-index: 1;
+}
+
+.services-tabs .tab:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.services-tabs .tab.active {
+    background: linear-gradient(135deg, #f6d061, var(--dorado-miel) 60%, #d3aa28);
+    color: #0b1d2a;
+    border-color: var(--dorado-miel);
+    position: relative;
+}
+
+.services-tabs .tab.active::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -8px;
+    height: 3px;
+    background: var(--dorado-miel);
+    border-radius: 2px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Slider grande para Actividades */
+.large-slider {
+    width: 100%;
+    max-width: 1200px;
+    height: 420px;
+    margin: 0 auto 40px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(10, 61, 98, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(243, 156, 18, 0.35);
+}
+
+.large-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .large-slider {
+        height: 280px;
+    }
+}
+
+/* DescripciÃ³n de Actividades */
+.activities-description {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(243, 156, 18, 0.25);
+    box-shadow: 0 8px 20px rgba(10, 61, 98, 0.18);
+}
+
+.activities-description h3 {
+    color: #111;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.activities-description p {
+    color: #111;
+    line-height: 1.6;
+}
+
+/* Productos */
+.products-section {
+    background-color: var(--blanco);
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    background-color: var(--azul-profundo);
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+/* Sobre Nosotros */
+.about-section {
+    background-color: var(--gris-claro);
+}
+
+.about-icon-1, .about-icon-2 {
+    background-color: var(--verde-hoja);
+}
+
+/* Contacto */
+.contact-section {
+    background: transparent; /* deja ver el gradiente del body */
+}
+
+.contact-section .section-title {
+    color: var(--dorado-miel);
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+}
+
+.contact-icon-1, .contact-icon-2, .contact-icon-3 {
+    background-color: var(--azul-profundo);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 16px 20px;
+    border: 2px solid rgba(243, 156, 18, 0.35); /* borde dorado suave */
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--blanco);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.06rem;
+    outline: none;
+    width: 500px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* Contenedor del formulario sin hexÃ¡gono */
+.contact-section .large-cell {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    background: transparent;
+    clip-path: none;
+    box-shadow: none;
+}
+
+/* Permitir mayor ancho del grid en la secciÃ³n de contacto */
+.contact-section .honeycomb-grid {
+    max-width: 1400px;
+}
+
+.contact-section .hex-content {
+    padding: 0;
+}
+
+/* BotÃ³n como el mock: dorado con degradado y texto oscuro */
+.contact-section .btn {
+    background: linear-gradient(135deg, #f6d061, var(--dorado-miel) 60%, #d3aa28);
+    color: #0b1d2a;
+    border-radius: 16px;
+    padding: 16px 24px;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.contact-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+}
+
+/* Footer */
+footer {
+    background-color: var(--azul-profundo);
+    color: var(--blanco);
+    padding: 50px 5% 20px;
+}
+
+.honeycomb-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-cell {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.footer-cell h3 {
+    color: var(--dorado-miel);
+    margin-bottom: 20px;
+}
+
+.footer-cell ul li {
+    margin-bottom: 10px;
+}
+
+.footer-cell ul li a:hover {
+    color: var(--dorado-miel);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--dorado-miel);
+    border-radius: 50%;
+    color: var(--blanco);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--verde-hoja);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .honeycomb-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hex-item {
+        width: 80px;
+        height: 50px;
+    }
+    
+    .hex-cell {
+        width: 200px;
+        height: 180px;
+    }
+    
+    .main-cell, .large-cell {
+        width: 250px;
+        height: 220px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hex-cell {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+.hex-cell:nth-child(2n) {
+    animation-delay: 0.2s;
+}
+
+.hex-cell:nth-child(3n) {
+    animation-delay: 0.4s;
+}
+
+.hex-cell:nth-child(4n) {
+    animation-delay: 0.6s;
+}
+
+.hex-cell:nth-child(5n) {
+    animation-delay: 0.8s;
+}
+
+.hex-cell:nth-child(6n) {
+    animation-delay: 1s;
+}
+
+/* Redondear esquinas de hexÃ¡gonos donde el navegador lo soporta */
+@supports (clip-path: path("M 0 0 L 1 1")) {
+    .hex-cell,
+    .hex-item,
+    .btn-hex {
+        clip-path: path("M 25% 0 Q 75% 0 100% 50% Q 75% 100% 25% 100% Q 0% 50% 25% 0 Z");
+    }
+}
+/* Eliminado: estilos de spans de fondo para las solapas */
+/* Hero: tÃ­tulo mÃ¡s sofisticado y un poco mÃ¡s chico */
+.hero-section.simple-hero {
+    position: relative;
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 2.6rem; /* tamaÃ±o elegante y legible */
+    letter-spacing: 1.2px;
+}
+
+/* Ampliar ligeramente el ancho del hÃ©roe */
+#inicio.hero-section {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* Fondo suave detrÃ¡s de los paneles del hero */
+.hero-carousel-row {
+    position: relative;
+    max-width: 1400px;
+    width: 98%;
+    margin: 25px auto 0;
+    gap: 24px;
+}
+
+.honeycomb-bg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+    width: 98%;
+    height: 68%;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.12), rgba(253, 194, 61, 0.08));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* HexÃ¡gonos del hÃ©roe mÃ¡s anchos sin afectar otras secciones */
+.hero-section .mini-carousel.hex-cell {
+    width: 320px;
+    height: 260px;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .honeycomb-bg {
+        height: 70%;
+        width: 97%;
+    }
+}
